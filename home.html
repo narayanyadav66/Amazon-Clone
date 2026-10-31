@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amazon India Clone</title>
+
+    <link rel="stylesheet" href="home.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            amazon<span>.in</span>
+        </div>
+
+        <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <small>Deliver to</small>
+                <strong>India</strong>
+            </div>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-container">
+
+            <select id="categorySelect">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home</option>
+                <option value="accessories">Accessories</option>
+            </select>
+
+            <input type="text"
+                id="searchInput"
+                placeholder="Search Amazon Clone...">
+
+            <button onclick="searchProducts()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+        <div class="header-option">
+            <small>Hello, User</small>
+            <strong>Account & Lists</strong>
+        </div>
+
+        <div class="header-option">
+            <small>Returns</small>
+            <strong>& Orders</strong>
+        </div>
+
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount">0</span>
+            <strong>Cart</strong>
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navigation">
+
+        <a href="#" onclick="showAllProducts()">☰ All</a>
+        <a href="#products">Today's Deals</a>
+        <a href="#products">Mobiles</a>
+        <a href="#products">Electronics</a>
+        <a href="#products">Fashion</a>
+        <a href="#products">Home & Kitchen</a>
+        <a href="#products">Best Sellers</a>
+        <a href="#products">Customer Service</a>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">WELCOME TO ONLINE SHOPPING</p>
+
+            <h1>Discover Amazing Products</h1>
+
+            <p>
+                Everything you need, all in one place.
+                Shop electronics, fashion and more.
+            </p>
+
+            <button onclick="scrollToProducts()">
+                Shop Now <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY SECTION -->
+    <section class="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="category-container">
+
+            <div class="category-card" onclick="filterCategory('electronics')">
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Electronics</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('fashion')">
+                <i class="fa-solid fa-shirt"></i>
+                <h3>Fashion</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('home')">
+                <i class="fa-solid fa-house"></i>
+                <h3>Home</h3>
+            </div>
+
+            <div class="category-card" onclick="filterCategory('accessories')">
+                <i class="fa-solid fa-watch"></i>
+                <h3>Accessories</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="products">
+
+        <div class="section-heading">
+
+            <h2>Today's Best Deals</h2>
+
+            <select id="sortSelect" onchange="sortProducts()">
+                <option value="default">Sort Products</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+            </select>
+
+        </div>
+
+        <div class="product-container" id="productContainer">
+
+            <!-- Products loaded through JavaScript -->
+
+        </div>
+
+        <p id="noProducts" class="no-products">
+            No products found.
+        </p>
+
+    </section>
+
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+
+            <h2><i class="fa-solid fa-cart-shopping"></i> Your Cart</h2>
+
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="cart-items" id="cartItems">
+
+            <!-- Cart items loaded through JavaScript -->
+
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Subtotal:
+                <span id="cartTotal">₹0</span>
+            </h3>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            Back to Top
+        </div>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>Get to Know Us</h3>
+                <p>About Us</p>
+                <p>Careers</p>
+                <p>Press Releases</p>
+            </div>
+
+            <div>
+                <h3>Connect with Us</h3>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Twitter</p>
+            </div>
+
+            <div>
+                <h3>Make Money with Us</h3>
+                <p>Sell on Amazon</p>
+                <p>Advertise Your Products</p>
+                <p>Become an Affiliate</p>
+            </div>
+
+            <div>
+                <h3>Let Us Help You</h3>
+                <p>Your Account</p>
+                <p>Returns Centre</p>
+                <p>Help</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <h2>amazon.in</h2>
+            <p>Amazon Clone | Created using HTML, CSS & JavaScript</p>
+            <p>2026 Amazon Clone.</p>
+        </div>
+
+    </footer>
+
+
+    <script src="home.js"></script>
+
+</body>
+</html>
